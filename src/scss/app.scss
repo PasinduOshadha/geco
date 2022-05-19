@@ -1,45 +1,291 @@
 // Configuration
-@import "/node_modules/bootstrap/scss/functions";
-@import "/node_modules/bootstrap/scss/variables";
-@import "/node_modules/bootstrap/scss/mixins";
-@import "/node_modules/bootstrap/scss/utilities";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
 
 // Layout & components
-@import "/node_modules/bootstrap/scss/root";
-@import "/node_modules/bootstrap/scss/reboot";
-// @import "/node_modules/bootstrap/scss/type";
-@import "/node_modules/bootstrap/scss/images";
-@import "/node_modules/bootstrap/scss/containers";
-@import "/node_modules/bootstrap/scss/grid";
-// @import "/node_modules/bootstrap/scss/tables";
-// @import "/node_modules/bootstrap/scss/forms";
-@import "/node_modules/bootstrap/scss/buttons";
-// @import "/node_modules/bootstrap/scss/transitions";
-// @import "/node_modules/bootstrap/scss/dropdown";
-// @import "/node_modules/bootstrap/scss/button-group";
-// @import "/node_modules/bootstrap/scss/nav";
-@import "/node_modules/bootstrap/scss/navbar";
-// @import "/node_modules/bootstrap/scss/card";
-// @import "/node_modules/bootstrap/scss/accordion";
-// @import "/node_modules/bootstrap/scss/breadcrumb";
-// @import "/node_modules/bootstrap/scss/pagination";
-// @import "/node_modules/bootstrap/scss/badge";
-// @import "/node_modules/bootstrap/scss/alert";
-// @import "/node_modules/bootstrap/scss/progress";
-// @import "/node_modules/bootstrap/scss/list-group";
-// @import "/node_modules/bootstrap/scss/close";
-// @import "/node_modules/bootstrap/scss/toasts";
-// @import "/node_modules/bootstrap/scss/modal";
-// @import "/node_modules/bootstrap/scss/tooltip";
-// @import "/node_modules/bootstrap/scss/popover";
-// @import "/node_modules/bootstrap/scss/carousel";
-// @import "/node_modules/bootstrap/scss/spinners";
-// @import "/node_modules/bootstrap/scss/offcanvas";
-// @import "/node_modules/bootstrap/scss/placeholders";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// @import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal";
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
 
 // Helpers
-@import "/node_modules/bootstrap/scss/helpers";
+@import "bootstrap/scss/helpers";
 
 // Utilities
-@import "/node_modules/bootstrap/scss/utilities/api";
+@import "bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
+
+// font awesome
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+// custom styles
+// font
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+// theme colors
+$theme-color: #F0C423;
+$theme-title-font: 'Sigmar One', cursive;
+$theme-body-font: 'Titillium Web', sans-serif;
+
+html, body{
+    // overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $theme-title-font;
+}
+
+body{
+    font-family: $theme-body-font;
+}
+
+
+.nav-link{
+    color: #fff;
+    font-family: $theme-title-font;
+    letter-spacing: 1px;
+    
+    &:hover{
+        color:#fff;
+    }
+
+    &.active{
+        color: $theme-color;
+    }
+}
+
+.section-title{
+    font-size: 50px;
+    margin: 25px auto;
+    @include media-breakpoint-down(md){
+        font-size: 40px;
+    }
+}
+
+// cover section
+.cover-section{
+    min-height: 50vh;
+    height: 90vh;
+    background: url('../img/cover-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-down(md){
+        height: auto;
+    }
+
+    .container{
+        height: 100%;
+
+        .row{
+            height: 100%;
+
+            .col-md-6{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                @include media-breakpoint-down(md){
+                    text-align: center;
+                }
+
+
+                &:first-child{
+                    .cover-logo{
+                        width: 70% !important;
+                        @include media-breakpoint-down(md){
+                            margin: auto;
+                        }
+                    }
+                    .cover-title{
+                        font-size: 50px;
+                        @include media-breakpoint-down(md){
+                            font-size: 40px;
+                        }
+                    }
+                    .app-download{
+                        width: 230px;
+                        height: 60px;
+                        display: inline-block;
+                        margin-right: 35px;
+                        @include media-breakpoint-down(md){
+                            margin: auto;
+                        }
+
+                        @include media-breakpoint-down(md){
+                            width: 150px;
+                        }
+
+                        img{
+                            width: 100% !important;
+
+                        }
+                    }
+                }
+                &:last-child{
+                    display: flex;
+                    justify-content: flex-end;
+
+                    p{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.our-partners{
+    width: 100%;
+    
+    .wooden-bg{
+        height: 150px;
+        width: 100%;
+        background: url('../img/wooden-bg.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        content: 'ss';
+
+        @include media-breakpoint-down(lg){
+            height: 140px;
+        }
+        @include media-breakpoint-down(md){
+            height: 70px;
+        }
+    }
+
+    .content{
+        background: #273156 url('../img/bg-2.png');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        @include media-breakpoint-down(lg){
+            height: 550px;
+        }
+        @include media-breakpoint-down(md){
+            height: 280px;
+        }
+
+        .book-set-1,
+        .book-set-2{
+            position: absolute;
+        }
+
+        .book-set-1{
+            left: 7%;
+            bottom: 0%;
+            @include media-breakpoint-down(lg){
+                width: 20%;
+                left: 2%;
+            }
+        }
+
+        .book-set-2{
+            right: 5%;
+            top: 2%;
+            @include media-breakpoint-down(lg){
+                width: 20%;
+                right: 2%;
+            }
+        }
+
+        .our-partners-banner{
+            margin: auto;
+            max-width: 60%;
+            margin-top: -200px;
+
+            @include media-breakpoint-down(lg){
+                margin-top: -20%;
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+.our-team{
+    background-color: #4D557A;
+
+    .col-md-2 .element-1{
+        @include media-breakpoint-down(lg){
+            display: none !important;
+        }
+    }
+
+    .member-wrapper{
+
+        @include media-breakpoint-down(md){
+            margin-bottom: 2rem;
+        }
+
+        .team-member-name{
+            font-family: $theme-title-font;
+            font-size: 32px;
+            color: #F0C423;
+            line-height: 32px;
+        }
+
+        .member-designation{
+            font-family: $theme-title-font;
+            font-size: 24px;
+            line-height: 24px;
+            color: #FB9D33;
+        }
+
+        .team-member-socials{
+            background-color: #9D97F4;
+            width: fit-content;
+            margin: auto;
+            padding: 10px 22px;
+            border-radius: 7px;
+
+            li .fa-brands{
+                color: #fff;
+                font-size: 22px;
+                margin: 0 2px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) { 
+    .socials{
+        display: none;
+    }
+}
+
