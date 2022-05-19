@@ -1,7 +1,9 @@
 let mix = require('laravel-mix');
 
+mix.setPublicPath('public/dist/')
+    .setResourceRoot('/public/dist')
+    .sass('src/scss/app.scss', 'css/')
+    .js('src/js/app.js', 'js/')
+    .copyDirectory('src/img', 'public/img')
 
-mix.sass('src/scss/app.scss', 'public/dist/css/')
-    .js('src/js/app.js', 'public/dist/js/')
-    .minify(['public/dist/css/app.css', 'public/dist/js/app.js'])
 
