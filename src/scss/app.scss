@@ -283,6 +283,59 @@ body{
     }
 }
 
+.character-section{
+    background: #4D557A url('../img/char-section-bg.png');
+    background-repeat: repeat-x;
+    background-size: 90%;
+    background-position: bottom center;
+    position: relative;
+    min-height: 95vh;
+    @include media-breakpoint-down(lg){
+        min-height: 90vh;
+    }
+    @include media-breakpoint-down(xl){
+        min-height: 80vh;
+    }
+    @include media-breakpoint-up(xl){
+        min-height: 80vh;
+    }
+    
+
+    .logo-img{
+        position: absolute;
+        bottom: 5%;
+        left: 10%;
+        max-width: 450px;
+
+        @include media-breakpoint-down(lg){
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            bottom: 0;
+            left: unset;
+            right: unset;
+        }
+    }
+
+    .character-img{
+        max-width: 65%;
+        margin-right: auto;
+        position: absolute;
+        bottom: 0;
+        right: 5%;
+        @include media-breakpoint-down(lg){
+            position: relative;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+        }
+        @include media-breakpoint-up(xl){
+            width: 55%;
+        }
+    }
+
+}
+
 @include media-breakpoint-down(lg) { 
     .socials{
         display: none;

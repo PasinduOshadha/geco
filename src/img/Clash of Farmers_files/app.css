@@ -18767,7 +18767,6 @@ body {
 .character-section .logo-img {
   position: absolute;
   bottom: 5%;
-  left: 10%;
   max-width: 450px;
 }
 @media (max-width: 991.98px) {
@@ -18793,11 +18792,6 @@ body {
     max-width: 100%;
     left: 0;
     right: 0;
-  }
-}
-@media (min-width: 1200px) {
-  .character-section .character-img {
-    width: 55%;
   }
 }
 
