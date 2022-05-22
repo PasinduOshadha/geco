@@ -68,7 +68,13 @@ h1, h2, h3, h4, h5, h6{
 body{
     font-family: $theme-body-font;
 }
+html, body{
+    overflow-x: hidden !important;
+}
 
+.bg-black{
+    background-color: #000;
+}
 
 .nav-link{
     color: #fff;
@@ -299,6 +305,9 @@ body{
     @include media-breakpoint-up(xl){
         min-height: 80vh;
     }
+    @include media-breakpoint-up(xxl){
+        min-height: 100vh;
+    }
     
 
     .logo-img{
@@ -329,11 +338,239 @@ body{
             left: 0;
             right: 0;
         }
+        @include media-breakpoint-down(md){
+            position: absolute;
+        }
         @include media-breakpoint-up(xl){
             width: 55%;
         }
     }
 
+}
+
+.our-investers{
+    width: 100%;
+    
+    .wooden-bg{
+        height: 150px;
+        width: 100%;
+        background: url('../img/wooden-bg.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+
+        @include media-breakpoint-down(lg){
+            height: 140px;
+        }
+        @include media-breakpoint-down(md){
+            height: 70px;
+        }
+    }
+
+    .content{
+        background: #48599E;
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        padding: 0 7%;
+        @include media-breakpoint-down(lg){
+            height: 650px;
+        }
+        @include media-breakpoint-down(md){
+            height: 280px;
+        }
+        @include media-breakpoint-up(lg){
+            height: 750px;
+        }
+
+        .character-element{
+            position: absolute;
+        }
+
+        .character-element{
+            left: 7%;
+            bottom: 0%;
+            width: 350px;
+            @include media-breakpoint-down(md){
+                width: 100px;
+                left: 2%;
+            }
+            @include media-breakpoint-up(lg){
+                width: 300px;
+                left: 17%;
+            }
+        }
+
+
+        .our-investers-banner{
+            max-width: 700px;
+            margin-top: -270px;
+
+            @include media-breakpoint-down(lg){
+                margin-top: -20%;
+                max-width: 80%;
+            }
+            @include media-breakpoint-up(lg){
+                max-width: 850px;
+                margin-top: -200px;
+            }
+            @include media-breakpoint-down(md){
+                max-width: 300px;
+                margin-top: -30%;
+            }
+        }
+    }
+}
+
+.roadmap{
+    background: url('../img/roadmap-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    z-index: 3;
+
+    .roadmap-img{
+        margin: auto;
+    }
+    
+    .elements-all{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 1113px;
+        z-index: 3;
+        transform: translate(200px, 750px);
+        @include  media-breakpoint-down(md){
+            display: none;
+        }
+        @include media-breakpoint-between(sm, lg) {
+            width: 640px;
+        }
+        @include media-breakpoint-between(lg, xl) {
+            width: 640px;
+            transform: translate(150px, 350px);
+        }
+
+    }
+}
+
+.watch-live{
+   
+    padding-top: 10px;
+    background: #A0B0EB ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+    overflow: hidden;
+    position: relative;
+    @include media-breakpoint-up(xl){
+        height: 860px;
+    }
+    @include media-breakpoint-down(md){
+        height: 660px !important;
+    }
+    @include media-breakpoint-down(lg){
+        height: 560px;
+    }
+    @include media-breakpoint-down(sm){
+        height: 360px !important;
+    }
+
+    .section-title{
+        text-align: left !important;
+        padding-left: 80px;
+    }
+
+    &::after{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        background: url('../img/watch-live-bg.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom center;
+    }
+    
+    .container-xxl{
+        height: 80%;
+        @include media-breakpoint-down(lg){
+            height: 60%;
+        }
+        .row{
+            height: 100%;
+            align-content: flex-end;
+
+            
+            .col-md-12{
+                z-index: 2;
+                position: relative;
+                @include  media-breakpoint-down(md){
+                    text-align: center;
+                }
+                
+                iframe{
+                    width: 620px;
+                    height: 380px;
+                    @include  media-breakpoint-down(lg){
+                        width: 440px;
+                        height: 250px;
+                    }
+
+                    @include  media-breakpoint-down(md){
+                        width: 580px;
+                        height: 380px;
+                        margin: auto;
+                    }
+
+                    @include  media-breakpoint-down(sm){
+                        width: 350px;
+                        height: 180px;
+                        margin: auto;
+                    }
+                }
+
+
+                // .elements-all{
+                //     position: absolute;
+                //     bottom: 220px;
+                //     right: -200px;
+                //     width: 780px;
+                //     z-index: 3;
+                // }
+            }
+        }
+    }
+}
+
+.footer{
+    &-socials{
+        .fa-brands{
+            color: #F0C423;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    }
+    &-menu{
+        width: 100%;
+        &-item{
+            margin: auto 15px; 
+            a{
+                color: #fff;
+                text-decoration: none;
+                font-family: $theme-title-font;
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(lg) { 
