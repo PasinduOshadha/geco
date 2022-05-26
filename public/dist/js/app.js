@@ -26,10 +26,10 @@ __webpack_require__.r(__webpack_exports__);
 
  // const AOS = require('aos')
 
-aos__WEBPACK_IMPORTED_MODULE_1___default().init();
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
+  aos__WEBPACK_IMPORTED_MODULE_1___default().init();
   var link = document.querySelector('.navbar-toggler');
   link.addEventListener('click', function () {
     if (link.classList.contains('toggle-menu--clicked')) {

@@ -3,10 +3,12 @@ import AOS from "aos"
 
 // const AOS = require('aos')
 
-AOS.init();
+
 
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
+    AOS.init();
+    
     var link = document.querySelector('.navbar-toggler');
     link.addEventListener('click', function() {
       if (link.classList.contains('toggle-menu--clicked')) {
