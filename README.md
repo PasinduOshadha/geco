@@ -12,4 +12,4 @@ To setup dev env:
 ## Folder Structure
 The production redy files are in public folder.
 The source files are in src/ folder
-when addinf new images, copy them to src/img folder. laravel mix will automatically do the rest for you.
+when adding new images, copy them to src/img folder. laravel mix will automatically do the rest for you.
